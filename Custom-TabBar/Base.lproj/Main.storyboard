@@ -55,30 +55,45 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6Co-RG-L7E">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="58"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H83-HT-NjT">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wL-GQ-dGP">
                                                 <rect key="frame" x="0.0" y="0.0" width="71.5" height="58"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="house" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didTapTabBarItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Rt-pO-stb"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7j-iQ-wa3">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7j-iQ-wa3">
                                                 <rect key="frame" x="71.5" y="0.0" width="70" height="58"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="cloud" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didTapTabBarItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xyG-Ey-zse"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-QY-82U">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-QY-82U">
                                                 <rect key="frame" x="141.5" y="0.0" width="75" height="58"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="folder" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didTapTabBarItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrj-wz-6xF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmC-uh-v0E">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmC-uh-v0E">
                                                 <rect key="frame" x="216.5" y="0.0" width="76.5" height="58"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="tray" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didTapTabBarItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h2q-WG-8bl"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-td-2MN">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-td-2MN">
                                                 <rect key="frame" x="293" y="0.0" width="65" height="58"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="paperplane" catalog="system"/>
+                                                <connections>
+                                                    <action selector="didTapTabBarItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pwt-jk-l66"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -106,13 +121,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="cloudButton" destination="w7j-iQ-wa3" id="F4k-lp-ef6"/>
-                        <outlet property="contentView" destination="gHe-M5-9SN" id="PEU-VE-cyd"/>
-                        <outlet property="customTabBarView" destination="9bd-qz-V8P" id="qwF-a6-bEp"/>
-                        <outlet property="folderButton" destination="YOE-QY-82U" id="Sq4-5y-35z"/>
-                        <outlet property="homeButton" destination="H83-HT-NjT" id="ybn-8X-Tke"/>
-                        <outlet property="messageButton" destination="x6C-td-2MN" id="UfH-Pv-0eZ"/>
-                        <outlet property="trayButton" destination="kmC-uh-v0E" id="aum-qT-tre"/>
+                        <outlet property="contentView" destination="gHe-M5-9SN" id="Glw-7J-kTA"/>
+                        <outlet property="customTabBarView" destination="9bd-qz-V8P" id="UVH-rc-fh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
