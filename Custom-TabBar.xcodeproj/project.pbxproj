@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		84BE97FE2613207600AE0F3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE97FD2613207600AE0F3E /* AppDelegate.swift */; };
 		84BE98002613207600AE0F3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE97FF2613207600AE0F3E /* SceneDelegate.swift */; };
-		84BE98022613207600AE0F3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE98012613207600AE0F3E /* ViewController.swift */; };
+		84BE98022613207600AE0F3E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE98012613207600AE0F3E /* CustomTabBarController.swift */; };
 		84BE98052613207600AE0F3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE98032613207600AE0F3E /* Main.storyboard */; };
 		84BE98072613207A00AE0F3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BE98062613207A00AE0F3E /* Assets.xcassets */; };
 		84BE980A2613207A00AE0F3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE98082613207A00AE0F3E /* LaunchScreen.storyboard */; };
+		84BE981626133E3E00AE0F3E /* ChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE981526133E3E00AE0F3E /* ChildrenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84BE97FA2613207600AE0F3E /* Custom-TabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-TabBar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BE97FD2613207600AE0F3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84BE97FF2613207600AE0F3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84BE98012613207600AE0F3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84BE98012613207600AE0F3E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		84BE98042613207600AE0F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84BE98062613207A00AE0F3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84BE98092613207A00AE0F3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84BE980B2613207A00AE0F3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BE981526133E3E00AE0F3E /* ChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		84BE97FC2613207600AE0F3E /* Custom-TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				84BE98112613208400AE0F3E /* Delegate */,
+				84BE98012613207600AE0F3E /* CustomTabBarController.swift */,
+				84BE98032613207600AE0F3E /* Main.storyboard */,
+				84BE98122613209300AE0F3E /* Global */,
+				84BE981526133E3E00AE0F3E /* ChildrenViewController.swift */,
+			);
+			path = "Custom-TabBar";
+			sourceTree = "<group>";
+		};
+		84BE98112613208400AE0F3E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
 				84BE97FD2613207600AE0F3E /* AppDelegate.swift */,
 				84BE97FF2613207600AE0F3E /* SceneDelegate.swift */,
-				84BE98012613207600AE0F3E /* ViewController.swift */,
-				84BE98032613207600AE0F3E /* Main.storyboard */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		84BE98122613209300AE0F3E /* Global */ = {
+			isa = PBXGroup;
+			children = (
 				84BE98062613207A00AE0F3E /* Assets.xcassets */,
 				84BE98082613207A00AE0F3E /* LaunchScreen.storyboard */,
 				84BE980B2613207A00AE0F3E /* Info.plist */,
 			);
-			path = "Custom-TabBar";
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BE98022613207600AE0F3E /* ViewController.swift in Sources */,
+				84BE98022613207600AE0F3E /* CustomTabBarController.swift in Sources */,
 				84BE97FE2613207600AE0F3E /* AppDelegate.swift in Sources */,
 				84BE98002613207600AE0F3E /* SceneDelegate.swift in Sources */,
+				84BE981626133E3E00AE0F3E /* ChildrenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H922B55M85;
-				INFOPLIST_FILE = "Custom-TabBar/Info.plist";
+				INFOPLIST_FILE = "Custom-TabBar/Global/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H922B55M85;
-				INFOPLIST_FILE = "Custom-TabBar/Info.plist";
+				INFOPLIST_FILE = "Custom-TabBar/Global/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

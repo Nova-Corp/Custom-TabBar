@@ -1,24 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
+        <scene sceneID="WWW-fm-RKe">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="Ius-es-SCS" customClass="HomeViewController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bU1-PP-zdM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="lZX-hm-Bd0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bac-OF-Sup" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-556"/>
+        </scene>
+        <!--Cloud View Controller-->
+        <scene sceneID="QwI-kV-fHR">
+            <objects>
+                <viewController storyboardIdentifier="CloudViewController" id="GoK-Nw-Bdc" customClass="CloudViewController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Fz-hD-E7g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="38v-jl-4n5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wgy-ap-e0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="-556"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CustomTabBarController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHe-M5-9SN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-qz-V8P">
+                                <rect key="frame" x="28" y="804" width="358" height="58"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6Co-RG-L7E">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="58"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H83-HT-NjT">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="house" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7j-iQ-wa3">
+                                                <rect key="frame" x="71.5" y="0.0" width="70" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="cloud" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-QY-82U">
+                                                <rect key="frame" x="141.5" y="0.0" width="75" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="folder" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmC-uh-v0E">
+                                                <rect key="frame" x="216.5" y="0.0" width="76.5" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="tray" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-td-2MN">
+                                                <rect key="frame" x="293" y="0.0" width="65" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="paperplane" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39539536829999999" green="0.74087542299999998" blue="0.90983253720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="6Co-RG-L7E" firstAttribute="top" secondItem="9bd-qz-V8P" secondAttribute="top" id="IZT-e2-yz8"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Co-RG-L7E" secondAttribute="bottom" id="Oh4-fR-aQ4"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Co-RG-L7E" secondAttribute="trailing" id="aYP-yv-iGe"/>
+                                    <constraint firstAttribute="height" constant="58" id="nTR-fw-Snd"/>
+                                    <constraint firstItem="6Co-RG-L7E" firstAttribute="leading" secondItem="9bd-qz-V8P" secondAttribute="leading" id="vPW-oz-EDi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gHe-M5-9SN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1kX-Ej-s2i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9bd-qz-V8P" secondAttribute="bottom" id="9T9-ai-XK5"/>
+                            <constraint firstAttribute="bottom" secondItem="gHe-M5-9SN" secondAttribute="bottom" id="PKV-or-b7w"/>
+                            <constraint firstItem="9bd-qz-V8P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="QJo-n0-zvF"/>
+                            <constraint firstItem="gHe-M5-9SN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZSC-kt-Ou5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9bd-qz-V8P" secondAttribute="trailing" constant="28" id="sIK-lR-C5s"/>
+                            <constraint firstItem="gHe-M5-9SN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xeu-KE-UyB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cloudButton" destination="w7j-iQ-wa3" id="F4k-lp-ef6"/>
+                        <outlet property="contentView" destination="gHe-M5-9SN" id="PEU-VE-cyd"/>
+                        <outlet property="customTabBarView" destination="9bd-qz-V8P" id="qwF-a6-bEp"/>
+                        <outlet property="folderButton" destination="YOE-QY-82U" id="Sq4-5y-35z"/>
+                        <outlet property="homeButton" destination="H83-HT-NjT" id="ybn-8X-Tke"/>
+                        <outlet property="messageButton" destination="x6C-td-2MN" id="UfH-Pv-0eZ"/>
+                        <outlet property="trayButton" destination="kmC-uh-v0E" id="aum-qT-tre"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+        <!--Paper Plane View Controller-->
+        <scene sceneID="s1Y-t3-QYe">
+            <objects>
+                <viewController storyboardIdentifier="PaperPlaneViewController" id="93I-oH-nx8" customClass="PaperPlaneViewController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uC5-JB-UVx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="fKS-bf-r66"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmy-rq-6u7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="817"/>
+        </scene>
+        <!--Tray View Controller-->
+        <scene sceneID="U6J-cg-w3s">
+            <objects>
+                <viewController storyboardIdentifier="TrayViewController" id="ZEM-DH-Kub" customClass="TrayViewController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="94e-i6-ilg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="hxn-oN-AzR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgL-Fb-O2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="817"/>
+        </scene>
+        <!--Folder View Controller-->
+        <scene sceneID="cbZ-Y5-7KG">
+            <objects>
+                <viewController storyboardIdentifier="FolderViewController" id="ooh-ZB-wma" customClass="FolderViewController" customModule="Custom_TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qn8-jP-MI3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="GNa-VK-3Jy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ww-G2-Kfy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="122"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="paperplane" catalog="system" width="128" height="121"/>
+        <image name="tray" catalog="system" width="128" height="88"/>
+    </resources>
 </document>

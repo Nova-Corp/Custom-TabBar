@@ -13,24 +13,25 @@ struct TabItem {
     let itemTitle: String
     let defaultImage: UIImage
     let selectedImage: UIImage
+    let viewController: UIViewController
+    
 }
 
 class CustomTabBarController: UIViewController {
     @IBOutlet var customTabBarView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    
 
     @IBOutlet var homeButton: UIButton!
     @IBOutlet var cloudButton: UIButton!
     @IBOutlet var folderButton: UIButton!
     @IBOutlet var trayButton: UIButton!
     @IBOutlet var messageButton: UIButton!
+    
+    let selectedIndex = 0
+    
 
-    lazy var tabItems: [TabItem] = [
-        TabItem(item: homeButton, itemTitle: "Home", defaultImage: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!),
-        TabItem(item: cloudButton, itemTitle: "Home", defaultImage: UIImage(systemName: "cloud")!, selectedImage: UIImage(systemName: "cloud.fill")!),
-        TabItem(item: folderButton, itemTitle: "Home", defaultImage: UIImage(systemName: "folder")!, selectedImage: UIImage(systemName: "folder.fill")!),
-        TabItem(item: trayButton, itemTitle: "Home", defaultImage: UIImage(systemName: "tray")!, selectedImage: UIImage(systemName: "tray.fill")!),
-        TabItem(item: messageButton, itemTitle: "Home", defaultImage: UIImage(systemName: "paperplane")!, selectedImage: UIImage(systemName: "paperplane.fill")!),
-    ]
+    var tabItems: [TabItem]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +43,24 @@ class CustomTabBarController: UIViewController {
         folderButton.addTarget(self, action: #selector(didTapFolderButton(_:)), for: .touchUpInside)
         trayButton.addTarget(self, action: #selector(didTapTrayButton(_:)), for: .touchUpInside)
         messageButton.addTarget(self, action: #selector(didTapMessageButton(_:)), for: .touchUpInside)
+        
+        guard let homeVC = storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
+        guard let cloudVC = storyboard?.instantiateViewController(identifier: "CloudViewController") as? CloudViewController else { return }
+        guard let folderVC = storyboard?.instantiateViewController(identifier: "FolderViewController") as? FolderViewController else { return }
+        guard let trayVC = storyboard?.instantiateViewController(identifier: "TrayViewController") as? TrayViewController else { return }
+        guard let paperPlaneVC = storyboard?.instantiateViewController(identifier: "PaperPlaneViewController") as? PaperPlaneViewController else { return }
+        
+        tabItems = [
+            TabItem(item: homeButton, itemTitle: "Home", defaultImage: UIImage(systemName: "house")!, selectedImage: UIImage(systemName: "house.fill")!, viewController: homeVC),
+            TabItem(item: cloudButton, itemTitle: "Home", defaultImage: UIImage(systemName: "cloud")!, selectedImage: UIImage(systemName: "cloud.fill")!, viewController: cloudVC),
+            TabItem(item: folderButton, itemTitle: "Home", defaultImage: UIImage(systemName: "folder")!, selectedImage: UIImage(systemName: "folder.fill")!, viewController: folderVC),
+            TabItem(item: trayButton, itemTitle: "Home", defaultImage: UIImage(systemName: "tray")!, selectedImage: UIImage(systemName: "tray.fill")!, viewController: trayVC),
+            TabItem(item: messageButton, itemTitle: "Home", defaultImage: UIImage(systemName: "paperplane")!, selectedImage: UIImage(systemName: "paperplane.fill")!, viewController: paperPlaneVC),
+        ]
 
-        selectedTabItem(is: tabItems[0].item)
+        DispatchQueue.main.async {[weak self] in
+            self?.selectedTabItem(is: self!.tabItems[self!.selectedIndex].item)
+        }
     }
 
     @objc func didTapHomeButton(_ sender: UIButton) {
@@ -67,21 +84,24 @@ class CustomTabBarController: UIViewController {
     }
 
     private func selectedTabItem(is button: UIButton) {
+
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseOut,
-                       animations: {
-                           self.tabItems.forEach {
+                       animations: {[weak self] in
+                        self?.tabItems.forEach {
                                if $0.item == button {
                                    $0.item.setImage($0.selectedImage, for: .normal)
                                    $0.item.transform = .init(scaleX: 1.5, y: 1.5)
+                                self?.contentView.addSubview($0.viewController.view)
+                                $0.viewController.didMove(toParent: self)
                                } else {
                                    $0.item.setImage($0.defaultImage, for: .normal)
                                    $0.item.transform = .init(scaleX: 1, y: 1)
                                }
                            }
 
-                           self.view.layoutIfNeeded()
+                        self?.view.layoutIfNeeded()
 
         })
     }
