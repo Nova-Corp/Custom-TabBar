@@ -60,9 +60,9 @@
 			children = (
 				84BE98112613208400AE0F3E /* Delegate */,
 				84BE98012613207600AE0F3E /* CustomTabBarController.swift */,
+				84BE981526133E3E00AE0F3E /* ChildrenViewController.swift */,
 				84BE98032613207600AE0F3E /* Main.storyboard */,
 				84BE98122613209300AE0F3E /* Global */,
-				84BE981526133E3E00AE0F3E /* ChildrenViewController.swift */,
 			);
 			path = "Custom-TabBar";
 			sourceTree = "<group>";
